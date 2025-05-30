@@ -1,0 +1,627 @@
+:root {
+    --primary-color: #007acc;
+    /* A vibrant, professional blue */
+    --secondary-color: #f0f2f5;
+    /* Soft grey for subtle backgrounds */
+    --dark-color: #2c3e50;
+    /* Deep charcoal for strong contrast */
+    --text-color: #333;
+    --light-text-color: #ecf0f1;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --box-shadow-md: 0 6px 12px rgba(0, 0, 0, 0.12);
+    --transition-speed: 0.3s ease-in-out;
+    --gradient-start: #007acc;
+    /* Primary blue */
+    --gradient-end: #005f99;
+    /* Slightly darker blue for depth */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--dark-color);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: var(--box-shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    max-width: 1100px;
+    /* Slightly wider container */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    /* Increased horizontal padding */
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    /* Larger name */
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+header h1 span {
+    color: var(--light-text-color);
+}
+
+header nav a {
+    color: var(--light-text-color);
+    margin: 0 18px;
+    /* More spacing between links */
+    text-decoration: none;
+    font-weight: 500;
+    /* Slightly bolder nav links */
+    transition: color var(--transition-speed), border-bottom var(--transition-speed);
+    padding-bottom: 5px;
+    /* Space for border-bottom */
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Global Section Styling --- */
+section {
+    padding: 5rem 25px;
+    /* More vertical padding */
+    max-width: 1100px;
+    /* Consistent wider container */
+    margin: 25px auto;
+    /* Margin above and below */
+    background: #fff;
+    border-radius: var(--border-radius-lg);
+    /* More rounded corners */
+    box-shadow: var(--box-shadow-md);
+    transition: transform var(--transition-speed);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    /* More space below heading */
+    position: relative;
+    font-size: 2.5rem;
+    /* Larger section titles */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    /* Longer underline */
+    height: 5px;
+    /* Thicker underline */
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    /* More space below line */
+    border-radius: 3px;
+}
+
+/* --- Hero Section (Home) --- */
+#home {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 8rem 25px;
+    /* Even more padding for a grander feel */
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    /* No margin below hero */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    /* Ensure a good height */
+    position: relative;
+    /* For potential background effects */
+    overflow: hidden;
+    /* To contain any particles/animations */
+}
+
+#home h2 {
+    font-size: 4rem;
+    /* Significantly larger hero title */
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Subtle text shadow */
+}
+
+#home h2::after {
+    background: #fff;
+}
+
+#home p {
+    font-size: 1.6rem;
+    /* Larger hero description */
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    /* Lighter font weight for hero text */
+}
+
+.cta-button {
+    display: inline-flex;
+    /* Use flex for icon alignment */
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--primary-color);
+    padding: 18px 35px;
+    /* Larger button */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    /* Bolder button text */
+    font-size: 1.2rem;
+    /* Larger button text */
+    transition: all var(--transition-speed);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button i {
+    margin-left: 10px;
+    /* Space between text and icon */
+    transition: transform var(--transition-speed);
+}
+
+.cta-button:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-5px);
+    /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+    /* Move icon on hover */
+}
+
+/* --- About Me --- */
+#about {
+    text-align: center;
+    /* Center content in about section */
+}
+
+#about p {
+    font-size: 1.15rem;
+    /* Slightly larger text */
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    /* Added bottom margin */
+    color: var(--text-color);
+}
+
+#about .profile-img {
+    width: 180px;
+    /* Larger profile image */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    /* Primary color border */
+    box-shadow: var(--box-shadow-md);
+    margin-bottom: 2rem;
+    /* Space below image */
+}
+
+/* --- Portfolio Projects --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Slightly wider min width */
+    gap: 30px;
+    /* More space between projects */
+}
+
+.project {
+    background: #fff;
+    padding: 2.2rem;
+    /* More padding */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+    border-left: 6px solid var(--primary-color);
+    /* Thicker border */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    /* Ensure content stacks */
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    /* More pronounced lift */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+    /* Stronger shadow */
+}
+
+.project h3 {
+    color: var(--dark-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    font-size: 1.6rem;
+    /* Slightly larger project titles */
+    margin-bottom: 1rem;
+}
+
+.project p {
+    font-size: 1.05rem;
+    /* Slightly larger project text */
+    margin-bottom: 2rem;
+    /* More space before links */
+    flex-grow: 1;
+    /* Allows paragraphs to take available space */
+}
+
+.project .project-links {
+    margin-top: auto;
+    /* Pushes links to the bottom */
+    padding-top: 1rem;
+    border-top: 1px solid var(--secondary-color);
+    /* Separator line */
+    display: flex;
+    /* Layout for links */
+    gap: 20px;
+}
+
+.project .project-links a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.project .project-links a:hover {
+    color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+.project .project-links i {
+    margin-right: 8px;
+    /* More space for icon */
+    font-size: 1.1rem;
+}
+
+/* --- Skills --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Adjusted min width */
+    gap: 25px;
+}
+
+.skills-category {
+    background: var(--secondary-color);
+    padding: 2rem;
+    /* More padding */
+    border-radius: var(--border-radius-md);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.07);
+    /* Deeper inset shadow */
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle border */
+}
+
+.skills-category h3 {
+    color: var(--dark-color);
+    /* Darker heading */
+    margin-top: 0;
+    font-size: 1.4rem;
+    /* Larger skill category title */
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+    /* Underline for category */
+    padding-bottom: 10px;
+    display: inline-block;
+    /* To make border-bottom fit content */
+}
+
+.tag {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    /* Larger tags */
+    margin: 0.5rem;
+    /* More space between tags */
+    border-radius: 25px;
+    /* Even more rounded */
+    font-size: 1rem;
+    /* Slightly larger tag text */
+    font-weight: 500;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tag:hover {
+    background: var(--dark-color);
+    transform: translateY(-2px) scale(1.03);
+    /* Subtle lift and grow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Resume --- */
+#resume {
+    text-align: center;
+}
+
+#resume p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Contact Form --- */
+#contact form {
+    max-width: 650px;
+    /* Slightly wider form */
+    margin: auto;
+    background: var(--secondary-color);
+    padding: 3rem;
+    /* More padding */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-md);
+}
+
+form input,
+form textarea {
+    display: block;
+    width: calc(100% - 24px);
+    /* Adjust for padding */
+    margin: 1.2rem 0;
+    /* More vertical space */
+    padding: 14px 12px;
+    /* Larger input fields */
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* Inner shadow for inputs */
+}
+
+form textarea {
+    min-height: 150px;
+    /* Taller textarea */
+    resize: vertical;
+}
+
+form button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    /* Larger button */
+    border-radius: var(--border-radius-sm);
+    font-size: 1.15rem;
+    /* Larger button text */
+    font-weight: 600;
+    transition: background var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    width: auto;
+    margin: 1.5rem auto 0;
+    display: flex;
+    /* Use flex for button alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Space between text and icon */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+    background: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#contact .social-links {
+    text-align: center;
+    margin-top: 2.5rem;
+    /* More space above social links */
+}
+
+#contact .social-links p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+#contact .social-links a {
+    display: inline-block;
+    color: var(--dark-color);
+    font-size: 2.6rem;
+    /* Larger social icons */
+    margin: 0 18px;
+    /* More space between icons */
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+#contact .social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px) scale(1.1);
+    /* More pronounced lift and slight grow */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    /* More padding */
+    background: var(--dark-color);
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+    margin-top: 50px;
+    /* More space above footer */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    header nav {
+        margin-top: 1.5rem;
+    }
+
+    header nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    #home {
+        padding: 6rem 15px;
+        min-height: 350px;
+    }
+
+    #home h2 {
+        font-size: 2.8rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 3.5rem 15px;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2::after {
+        width: 50px;
+        height: 3px;
+        margin-top: 10px;
+    }
+
+    #about .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+
+    .project-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project {
+        padding: 1.8rem;
+    }
+
+    .project h3 {
+        font-size: 1.4rem;
+    }
+
+    .project p {
+        font-size: 0.95rem;
+    }
+
+    .project .project-links {
+        flex-direction: column;
+        /* Stack links on small screens */
+        gap: 10px;
+    }
+
+    .skills-category {
+        padding: 1.5rem;
+    }
+
+    .skills-category h3 {
+        font-size: 1.2rem;
+    }
+
+    .tag {
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    #contact form {
+        padding: 2rem;
+    }
+
+    form input,
+    form textarea {
+        width: calc(100% - 20px);
+        margin: 0.8rem 0;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    form button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    #contact .social-links a {
+        font-size: 2.2rem;
+        margin: 0 10px;
+    }
+}
+header nav a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            font-weight: 600; /* Make active link bolder */
+}
+
+#formSuccess {
+    color: green;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
